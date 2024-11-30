@@ -22,7 +22,7 @@ class FrontEndController extends Controller
             'image' => 'required|mimes:jpg,jpeg,png',
             'full_name' => 'required|string|max:50',
             'email' => 'required|max:100',
-            'message' => 'required|max:255',
+            'message' => 'required|string|max:255',
         ]);
 
         $image = $request->file('image');

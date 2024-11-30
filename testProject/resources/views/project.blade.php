@@ -83,7 +83,7 @@ $reviews = DB::table('reviews')->get();
                         </div>
                         <label class="flex flex-col gap-2 text-sm font-medium text-dark-grey-700" for="message">
                             Message
-                            <textarea rows="5" class="p-4 border border-solid outline-none rounded-xl placeholder:text-sm placeholder:font-medium placeholder:text-dark-grey-500 border-grey-500 focus:border-grey-600" placeholder="Your message" id="message" name="message" spellcheck="false"></textarea>
+                            <textarea rows="10" class="p-4 border border-solid outline-none rounded-xl placeholder:text-sm placeholder:font-medium placeholder:text-dark-grey-500 border-grey-500 focus:border-grey-600" placeholder="Your message" id="message" name="message" spellcheck="false"></textarea>
                         </label>
                         <button class="flex items-center justify-center py-4 text-center text-white px-7 rounded-2xl bg-blue-500 hover:bg-blue-600 focus:ring-4 focus:ring-purple-blue-100 transition duration-300">Submit message</button>
                     </form>

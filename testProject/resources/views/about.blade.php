@@ -20,6 +20,7 @@ $customers = DB::table('customers')->get();
         </div>
     </div>
     
+    
     <section class="py-24 relative xl:mr-0 lg:mr-5 mr-0">
         <div class="w-full max-w-7xl px-4 md:px-5 lg:px-5 mx-auto">
             <div class="w-full justify-start items-center xl:gap-12 gap-10 grid lg:grid-cols-2 grid-cols-1">
