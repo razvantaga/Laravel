@@ -1,5 +1,10 @@
 @extends('admin.index')
 
+@php
+$services = DB::table('services')->get();
+$categories = DB::table('category')->get();
+@endphp
+
 @section('content')
 
 <div class="p-4 bg-white block sm:flex items-center justify-between border-b border-gray-200 lg:mt-1.5 dark:bg-gray-800 dark:border-gray-700">
@@ -177,7 +182,7 @@
 
 <div class="sticky bottom-0 right-0 items-center w-full p-4 bg-white border-t border-gray-200 sm:flex sm:justify-between dark:bg-gray-800 dark:border-gray-700">
     <div class="text-sm font-normal text-gray-500 dark:text-gray-400">
-        {{ $categories->links() }}
+
     </div>
 </div>
 
