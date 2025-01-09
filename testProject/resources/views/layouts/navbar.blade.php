@@ -130,6 +130,26 @@
 
 
 <script>
+   document.addEventListener("DOMContentLoaded", () => {
+    // Select the button and the target menu
+    const toggleButton = document.querySelector('[data-collapse-toggle="navbar-language"]');
+    const targetElement = document.getElementById("navbar-language");
+
+    // Add a click event listener to the button
+    toggleButton.addEventListener("click", () => {
+        if (targetElement.classList.contains("hidden")) {
+            // If the menu is hidden, remove the "hidden" class to display it
+            targetElement.classList.remove("hidden");
+        } else {
+            // If the menu is visible, add the "hidden" class to hide it
+            targetElement.classList.add("hidden");
+        }
+    });
+});
+
+</script>
+
+<script>
     const dropdownButton = document.querySelector('[data-dropdown-toggle="language-dropdown-menu"]');
     const dropdownMenu = document.getElementById("language-dropdown-menu");
 

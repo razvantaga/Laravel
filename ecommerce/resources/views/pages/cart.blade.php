@@ -21,41 +21,14 @@ $vat = $setting->vat;
                     <div class="container mt-3">
                         <div class="row">
                             <div class="col-lg-3 mt-3" style="background-color: #eee; padding: 2em; border-radius:30px;">
-                                <div class="order_total_content" style="padding: 15px;">
-                                    @if (Session::has('coupons'))
-                                    @else
-                                    <h5 style="font-size: 1rem">Apply coupon</h5>
-                                    <form action="{{ route('apply.coupon') }}" method="post">
-                                        @csrf
-                                        <div class="form-group">
-                                            <input type="text" name="coupon" class="form-control" required placeholder="Enter your coupon"> <br>
-                                            <button type="submit" class="btn btn-danger ">Submit</button>
-                                        </div>
-                                    </form>
-                                    @endif
+                                <div class="order_total_content" >
+                                    <h5 style="font-size: 1.2rem">Sumar comanda</h5>
                                 </div>
 
                                 <ul class="list-group ">
-                                    @if(Session::has('coupons'))
-                                    <li class="list-group-item">Subtotal: <span style="float: right;">${{ Session::get('coupons')['balance'] }}</span> </li>
-                                    <li class="list-group-item">Coupon : ({{ Session::get('coupons')['name'] }})
-                                        <a href="{{ route('remove.coupon') }}" class="btn btn-danger btn-sm">X</a>
-                                        <span style="float: right;">${{ Session::get('coupons')['discount'] }}</span>
-                                    </li>
-                                    @else
                                     <li class="list-group-item">Subtotal: <span style="float: right;">${{ Cart::Subtotal() }}</span> </li>
-                                    @endif
-
-                                    <li class="list-group-item">Shipping Charge : <span style="float: right;">${{ $charge }}</span> </li>
-                                    <li class="list-group-item">Vat: <span style="float: right;">${{ $vat }}</span> </li>
                                     <li class="list-group-item">TVA: <span style="float: right;">${{ Cart::tax() }} </span> </li>
-                                    <li class="list-group-item">Order total: <span style="float: right;">${{ Cart::total() }}</span> </li>
-
-                                    @if(Session::has('coupons'))
-                                    <li class="list-group-item">Total: <span style="float: right;">${{ Session::get('coupons')['balance'] + $charge + $vat }}</span> </li>
-                                    @else
-                                    <li class="list-group-item">Total: <span style="float: right;">${{ Cart::Subtotal() + $charge + $vat }}</span> </li>
-                                    @endif
+                                    <li class="list-group-item">Total: <span style="float: right;">${{ Cart::total() }}</span> </li>
                                 </ul>
                                 <div class="mt-5 text-center">
                                     <a href="{{ route('user.checkout') }}" class="button cart_button_checkout"><i class="fas fa-angle-double-right custom-icon"></i>Check out</a>
@@ -95,9 +68,6 @@ $vat = $setting->vat;
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>

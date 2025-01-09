@@ -1531,14 +1531,14 @@ select option
 {
 	font-size: 20px;
 	font-weight: 500;
-	color: #000000;
+	color: rgba(0,0,0,0.4)
 }
 .footer_phone
 {
-	font-size: 18px;
+	font-size: 16px;
 	font-weight: 500;
-	color: #0e8ce4;
 	margin-top: 13px;
+	color: rgba(0,0,0,0.4);
 }
 .footer_contact_text
 {

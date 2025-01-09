@@ -36,6 +36,10 @@
   <link href="{{asset('../backend/lib/Ionicons/css/ionicons.css')}}" rel="stylesheet">
   <link href="{{asset('../backend/lib/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">
   <link href="{{asset('../backend/lib/rickshaw/rickshaw.min.css')}}" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" rel="stylesheet">
+
+
 
   <!-- Tag input CDN-->
   <link href="https://cdn.jsdelivr.net/bootstrap.tagsinput/0.8.0/bootstrap-tagsinput.css" rel="stylesheet" />
@@ -50,6 +54,8 @@
   <!-- Starlight CSS -->
   <link rel="stylesheet" href="{{asset('../backend/css/starlight.css')}}">
   <link href="{{asset('../backend/lib/summernote/summernote-bs4.css')}}" rel="stylesheet">
+
+
 
 </head>
 
@@ -588,6 +594,117 @@
           }
         });
     });
+  </script>
+
+  <script>
+    // Fetch data from the backend (Example)
+    var delivered = {
+      {
+        $delivered
+      }
+    };
+    var pending = {
+      {
+        DB::table('orders') - > where('status', 2) - > sum('total')
+      }
+    };
+    var canceled = {
+      {
+        DB::table('orders') - > where('status', 1) - > sum('total')
+      }
+    };
+
+    // Pie Chart
+    var ctx = document.getElementById("orderStatusPieChart").getContext("2d");
+    var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: {
+        labels: ["Delivered", "Pending", "Canceled"],
+        datasets: [{
+          data: [delivered, pending, canceled],
+          backgroundColor: ['#4e73df', '#f6c23e', '#e74a3b'],
+          hoverBackgroundColor: ['#2e59d9', '#d4b12f', '#b73229'],
+          hoverBorderColor: "rgba(234, 236, 244, 1)"
+        }],
+      },
+      options: {
+        maintainAspectRatio: false,
+        tooltips: {
+          backgroundColor: "rgb(255,255,255)",
+          bodyFontColor: "#858796",
+          borderColor: '#dddfeb',
+          borderWidth: 1,
+          xPadding: 15,
+          yPadding: 15,
+          displayColors: true,
+          caretPadding: 10,
+        },
+        legend: {
+          display: false
+        },
+        cutoutPercentage: 0,
+      },
+    });
+  </script>
+
+  <script>
+    // Area Chart
+    const ctxArea = document.getElementById("myAreaChart").getContext("2d");
+    const myAreaChart = new Chart(ctxArea, {
+      type: 'line',
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [{
+          label: "Earnings",
+          data: [0, 10000, 5000, 15000, 10000, 20000, 15000, 25000, 20000, 30000, 25000, 40000],
+          backgroundColor: "rgba(78, 115, 223, 0.05)",
+          borderColor: "rgba(78, 115, 223, 1)",
+          borderWidth: 2,
+        }],
+      },
+      options: {
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            grid: {
+              display: false
+            },
+          },
+          y: {
+            ticks: {
+              beginAtZero: true
+            },
+          },
+        },
+      },
+    });
+
+    // Pie Chart
+    const ctxPie = document.getElementById("myPieChart").getContext("2d");
+    const myPieChart = new Chart(ctxPie, {
+      type: 'doughnut',
+      data: {
+        labels: ["Direct", "Social", "Referral"],
+        datasets: [{
+          data: [55, 30, 15],
+          backgroundColor: ['#4e73df', '#1cc88a', '#36b9cc'],
+          hoverBackgroundColor: ['#2e59d9', '#17a673', '#2c9faf'],
+          hoverBorderColor: "rgba(234, 236, 244, 1)",
+        }],
+      },
+      options: {
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+          },
+        },
+      },
+    });
+  </script>
+
+  <script>
+    
   </script>
 </body>
 

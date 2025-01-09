@@ -5,7 +5,7 @@
 						->where('main_slider', 1)->orderBy('id', 'DESC')->first();
 	@endphp
 
-	<div class="banner">
+	<div class="banner z-0" style="z-index: 0;">
         <div class="banner_background" style="background-image: url('{{ asset('frontend/images/banner_background.jpg') }}')"></div>
 		<div class="container fill_height">
 			<div class="row fill_height">

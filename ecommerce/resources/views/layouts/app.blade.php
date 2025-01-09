@@ -78,12 +78,15 @@ $setting = DB::table('sitesetting')->first();
 						<!-- Wishlist -->
 						<div class="col-lg-5 col-9 order-lg-3 order-2 text-lg-left text-right">
 							<div class="wishlist_cart d-flex flex-row align-items-center justify-content-between">
-								<div class="top_bar_user">
-									@guest
+								@guest	
+								<div class="top_bar_user" style="margin-left: 8em;">
+									
 									<div class="user_icon"><img src="{{asset('frontend/images/user.png')}}" alt=""></div>
 									<div class="profile_text"><a href="{{ route('register') }}">Register</a></div>
 									<div class="profile_text"><a href="{{ route('login') }}">Sign in</a></div>
-									@else
+								</div>
+								@else
+								<div class="top_bar_user">
 									<ul class="standard_dropdown top_bar_dropdown">
 										<li>
 											<a href="{{ route('home') }}">
@@ -96,8 +99,8 @@ $setting = DB::table('sitesetting')->first();
 											</ul>
 										</li>
 									</ul>
-									@endguest
 								</div>
+								@endguest
 
 								<div class=" d-flex flex-row align-items-center justify-content-end">
 									@guest
@@ -170,15 +173,13 @@ $setting = DB::table('sitesetting')->first();
 							<div class="footer_title">DATE DE CONTACT</div>
 							<ul class="footer_list footer_list">
 								<li>
-									<div class="footer_phone"><i class="bi bi-telephone fs-5 me-2 text-primary mr-3"></i>{{ $setting->phone_tow }}</div>
+									<div class="footer_phone"><i class="bi bi-telephone fs-5 me-2 mr-3"></i>{{ $setting->phone_tow }}</div>
 								</li>
 								<li>
-									<div class="footer_phone"><i class="bi bi-envelope fs-5 me-2 text-primary mr-3"></i>{{ $setting->email }}</div>
+									<div class="footer_phone"><i class="bi bi-envelope fs-5 me-2 mr-3"></i>{{ $setting->email }}</div>
 								</li>
 								<li>
-									<div class="footer_contact_text d-flex">
-										<i class="bi bi-geo-alt fs-4 me-2 text-primary mt-3 mr-3"></i><p class="footer_phone">{{ $setting->company_address }}</p>
-									</div>
+									<div class="footer_phone"><i class="bi bi-geo-alt fs-4 me-2 mt-3 mr-3"></i>{{ $setting->company_address }}</div>
 								</li>
 								<div class="footer_social">
 									<ul>
@@ -195,13 +196,10 @@ $setting = DB::table('sitesetting')->first();
 						<div class="footer_column">
 							<div class="footer_title">ALTE INFORMATII</div>
 							<ul class="footer_list">
-								<li><a href="#">My Account</a></li>
-								<li><a href="#">Order Tracking</a></li>
-								<li><a href="#">Wish List</a></li>
-								<li><a href="#">Customer Services</a></li>
-								<li><a href="#">Returns / Exchange</a></li>
-								<li><a href="#">FAQs</a></li>
-								<li><a href="#">Product Support</a></li>
+								<li><a href="#">Politica de confidentialitate</a></li>
+								<li><a href="#">Termeni si conditii</a></li>
+								<li><a href="#">Politica cookie</a></li>
+								<li><a href="#">ANSPDCP</a></li>
 							</ul>
 						</div>
 					</div>
@@ -233,11 +231,10 @@ $setting = DB::table('sitesetting')->first();
 					<div class="col">
 
 						<div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
-							<div class="copyright_content"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							<div class="copyright_content">
 								Copyright &copy;<script>
 									document.write(new Date().getFullYear());
 								</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-								<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 							</div>
 							<div class="logos ml-sm-auto">
 								<ul class="logos_list">

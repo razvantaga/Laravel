@@ -15,8 +15,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
-					<div class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
 
+					<h2>Contact Us</h2>
+					<p class="mb-5 text-secondary lead fs-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vero, maiores laborum? Est ullam laborum totam consectetur quaerat! Soluta, itaque. Distinctio!</p>
+
+					<div class="contact_info_container d-flex flex-lg-row flex-column justify-content-between align-items-between">
 						<!-- Contact Item -->
 						<div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
 							<div class="contact_info_image"><img src="images/contact_1.png" alt=""></div>
@@ -56,7 +59,7 @@
 			<div class="row">
 				<div class="col-lg-10 offset-lg-1">
 					<div class="contact_form_container">
-						<div class="contact_form_title">Get in Touch</div>
+						<div class="contact_form_title">Send us a message!</div>
 
 						<form method="post" action="{{ route('contact.form') }}" id="contact_form">
                             @csrf

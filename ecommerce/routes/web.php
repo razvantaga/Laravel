@@ -170,6 +170,7 @@ Route::get('payment/page', 'CartController@paymentPage')->name('payment.step');
 Route::post('payment/process', 'PaymentController@paymentProcess')->name('payment.process');
 Route::post('user/stripe/charge', 'PaymentController@stripeCharge')->name('stripe.charge');
 Route::post('user/oncash/charge', 'PaymentController@onCashCharge')->name('oncash.charge');
+Route::post('user/payment/charge', 'PaymentController@payment')->name('payment');
 
 // Home section - Product details
 Route::get('/product/details/{id}/{product_name}', 'ProductController@view');
